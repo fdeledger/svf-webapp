@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SVF Lightning Webapp Solutions 2018</title>
+<style>
+
+/* CSS Variables*/
+:root{
+--primary: #ddd;
+--dark: #333;
+--light: #fff;
+}
+
+html{
+box-sizing: border-box;
+font-family: Arial, Helvetica, sans-serif;
+color: var(--dark);
+}
+
+body{
+background: #ccc;
+margin: 30px 50px;
+line-height: 1.4;
+
+}
+
+.btn{
+background: var(--dark);
+color: var(--light);
+padding: 0.6rem 1.3rem;
+text-decoration: none;
+border: 0;
+
+}
+
+img{
+max-width: 100%;
+}
+
+
+.wrapper {
+display: grid;
+grid-gap: 20px;
+}
+
+.main-nav ul{
+
+display: grid;
+grid-gap: 20px;
+padding: 0;
+list-style: none;
+grid-template-columns: repeat(3,1fr);
+
+
+}
+
+
+.main-nav a{
+background: var(--primary);
+display: block;
+tex-decoration:none;
+padding: 0.8rem;
+text-align: center;
+color: var(--dark);
+text-transform: uppercase;
+font-size: .8rem;
+box-shodow: var(--shadow);
+}
+
+.main-nav a:hover{
+background: var(--dark);
+color: var(--light);
+}
+
+/* CSS container*/
+
+.top-container{
+display: grid;
+grid-gap: 20px;
+grid-template-areas:
+'showcase showcase top-box-a'
+'showcase showcase top-box-b';
+}
+
+
+.showcase{
+grid-area: showcase;
+min-height: 400px;
+background: url(img/2.1.jpg);
+background-size: cover;
+background-position: center;
+padding: 3rem;
+display: flex;
+flex-direction: column;
+align-items: start;
+justify-content: center;
+box-shadow: var(--shadow);
+}
+
+.showcase h1{
+
+font-size: 4rem;
+margin-bottom: 0;
+color: var(--light);
+}
+
+.showcase p {
+
+font-size: 1.3rem;
+margin-top: 0;
+color: var(--light);
+}
+
+/* CSS topbox*/
+
+
+.top-box{
+
+background: var(--primary);
+display: grid;
+align-items: center;
+justify-items: center;
+box-shadow: var(--shadow);
+padding: 1.5rem;
+
+}
+
+.top-box .price{
+font-size: 1.5rem;
+
+}
+
+
+.top-box-a{
+
+grid-area: top-box-a;
+}
+
+
+
+.top-box-b{
+
+grid-area: top-box-b;
+}
+
+
+/* CSS box*/
+
+.boxes{
+
+display: grid;
+grid-gap: 10px;
+/*grid-template-columns: repeat(auto-fit,minmax(100px, 1fr));*/
+grid-template-columns: repeat(4,1fr);
+}
+
+.box {
+background: url(img/i1.png);
+background: var(--primary);
+text-align: center;
+padding: 1.5rem 2rem;
+box-shadow: var(--shadow);
+
+}
+/* CSS info*/
+.info{
+background: var(--primary);
+box-shadow: var(--shadow);
+display: grid;
+grid-gap: 30px;
+grid-template-columns: repeat(2, 1fr);
+padding 3rem;
+
+
+}
+/* CSS porfolio*/
+
+.portfolio{
+
+display: grid;
+grid-gap: 20px;
+grid-template-columns: repeat(4,1fr);
+/*grid-template-columns: repeat(auto-fit,minmax(100px, 1fr));*/
+
+}
+
+.portfolio img{
+
+width: 100%;
+box-shadow: var(--shadow);
+}
+
+/* CSS footer*/
+
+.footer{
+margin-top: 2rem;
+background: var(--dark);
+color: var(--light);
+text-align: center;
+padding: 1rem;
+
+}
+
+/*additional*/
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+
+.top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
+.top-right {
+    position: absolute;
+    top: 8px;
+    right: 30px;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 80px;
+    right: 16px;
+
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.textboxclass {
+height: 10px;
+width: 30px;
+background: transparent;
+
+color: black;
+
+}
+
+
+.boxes2{
+
+display: grid;
+grid-gap: 10px;
+/*grid-template-columns: repeat(auto-fit,minmax(100px, 1fr));*/
+grid-template-columns: repeat(1,1fr);
+}
+
+.box2 {
+background: url(img/s0.png);
+background: var(--primary);
+text-align: center;
+padding: 1.5rem 2rem;
+box-shadow: var(--shadow);
+
+}
+
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+
+
+
+<nav class="main-nav">
+<ul>
+
+             
+                <li>
+                  <a href="/partners-page">PARTNERS</a>
+                </li>
+                <li>
+                  <a class="page-scroll" href="/register">REGISTER</a>
+                </li>
+                <li>
+                  <a href="#"  >SIGN IN</a>
+                </li>
+              </ul> 
+</nav>
+
+<!--top container-->
+
+<section class="boxes2">
+
+<div class="box2">
+
+<div class="container">
+<img src="img/s0.png" height="125" width="115" alt="">
+
+<!-- <div ><input name="refconNo" type="text" class="textboxclass" class="bottom-right" placeholder="Text 1"></div> -->
+
+<br><br>
+<div class="container">
+<div class="centered">
+<!-- Display total cart value -->
+<div id='totalCart'>
+0.00
+</div>
+</div>
+</div>
+
+</div>
+<h5>Description 1</h5>
+
+<p><!-- Display the payment button. -->
+<!-- Identify your business so that you can collect the payments. -->
+    <input type="image" name="submit" onclick='payCart();'
+        src="img/cc.png"
+        alt="Add to Cart 1" height="50" width="50">
+    <input type="image" name="submit" onclick='deleteCart();'
+        src="img/del.png"
+        alt="Add to Cart 2" height="50" width="50">
+<!--end Display the payment button. -->
+</div>
+
+</section>
+
+<!--Box section-->
+<section class="boxes">
+<div class="box">
+
+<div class="container">
+<img src="img/s1.png" height="97" width="84" alt="">
+<div class="centered">0.015</div>
+</div>
+<h5>Description 2</h5>
+
+<p><!-- Display the payment button. -->
+<!-- Identify your business so that you can collect the payments. -->
+    <input type="image" name="submit" onclick='addCart(0.015);'
+        src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
+        alt="Add to Cart 3">
+    <img alt="" width="1" height="1"
+        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+<!--end Display the payment button. -->
+</p>
+</div>
+
+<div class="box">
+
+<div class="container">
+<img src="img/s2.png" height="97" width="84" alt="">
+<div class="centered">0.012</div>
+</div>
+<h5>Description 3</h5>
+
+<p><!-- Display the payment button. -->
+<!-- Identify your business so that you can collect the payments. -->
+    <input type="image" name="submit" onclick='addCart(0.012);'
+        src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
+        alt="Add to Cart 4">
+    <img alt="" width="1" height="1"
+        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+<!--end Display the payment button. -->
+</p>
+</div>
+
+
+<div class="box">
+<div class="container">
+<img src="img/s3.png" height="97" width="84" alt="">
+<div class="centered" ><font class="textlabel">0.017</font></div>
+</div>
+<h5>Description 4</h5>
+
+<p><!-- Display the payment button. -->
+<!-- Identify your business so that you can collect the payments. -->
+    <input type="image" name="submit" onclick='addCart(0.017);'
+        src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
+        alt="Add to Cart 5">
+    <img alt="" width="1" height="1"
+        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+<!--end Display the payment button. -->
+</p>
+</div>
+
+<div class="box">
+
+<div class="container">
+<img src="img/s4.png" height="97" width="84" alt="">
+<div class="centered">0.019</div>
+</div>
+<h5>Description 5</h5>
+
+<p><!-- Display the payment button. -->
+<!-- Identify your business so that you can collect the payments. -->
+    <input type="image" name="submit" onclick='addCart(0.019);'
+        src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
+        alt="Add to Cart 6">
+    <img alt="" width="1" height="1"
+        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+<!--end Display the payment button. -->
+</p>
+</div>
+
+
+</section>
+<!--end box section-->
+
+
+
+
+<!--footer -->
+<section class="footer">
+<p> SVF Enterprise &copy; 2018</p>
+</section>
+<!--end bfooter -->
+
+</div>
+
+<!--wrapper Ends-->
+
+
+
+</body>
+<script src="js/jquery-latest.js"></script>
+<script type="text/javascript">
+	var itemTotal = 0;
+	function addCart(itemValue) {
+		itemTotal = itemTotal + itemValue;
+		itemTotal = Math.round(itemTotal * 1000) / 1000;
+		$('#totalCart').load('updateValue.php?value=' + Number(itemTotal ).toFixed(3));
+	}
+	function deleteCart() {
+		itemTotal = 0;
+		$('#totalCart').load('updateValue.php?value=' + Number(itemTotal ).toFixed(2));
+	}
+</script>
+</html>
